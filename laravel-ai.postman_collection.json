@@ -1,0 +1,317 @@
+{
+  "info": {
+    "name": "Laravel AI API",
+    "description": "Postman collection for the Laravel-compatible public and admin API endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/health",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Site",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/site",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "site"]
+        }
+      }
+    },
+    {
+      "name": "Pages List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/pages",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "pages"]
+        }
+      }
+    },
+    {
+      "name": "Page By Slug",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/pages/home",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "pages", "home"]
+        }
+      }
+    },
+    {
+      "name": "Blog List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/blog?page=1",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "blog"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Blog Post By Slug",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/blog/why-laravel-is-great-for-apis",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "blog", "why-laravel-is-great-for-apis"]
+        }
+      }
+    },
+    {
+      "name": "Categories",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/categories",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "categories"]
+        }
+      }
+    },
+    {
+      "name": "Category Blog List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/categories/laravel/blog?page=1",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "categories", "laravel", "blog"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Admin User\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"secret123\",\n  \"password_confirmation\": \"secret123\",\n  \"role\": \"admin\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/register",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "register"]
+        }
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"secret123\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/login",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "login"]
+        }
+      }
+    },
+    {
+      "name": "Current User",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/user",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "user"]
+        }
+      }
+    },
+    {
+      "name": "List Posts (Admin/Editor)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/posts",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "posts"]
+        }
+      }
+    },
+    {
+      "name": "Create Post (Admin/Editor)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"New API article\",\n  \"slug\": \"new-api-article\",\n  \"excerpt\": \"Short summary of the article.\",\n  \"content\": \"This is a full article body.\",\n  \"photo\": \"https://images.unsplash.com/photo-1522202176988-66273c2fd55f\",\n  \"status\": \"published\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/posts",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "posts"]
+        }
+      }
+    },
+    {
+      "name": "List Pages Admin",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/pages-admin",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "pages-admin"]
+        }
+      }
+    },
+    {
+      "name": "Create Page Admin",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Services\",\n  \"slug\": \"services\",\n  \"content\": \"<p>Content for services page.</p>\",\n  \"photo\": \"https://images.unsplash.com/photo-1516321318423-f06f85e504b3\",\n  \"status\": \"published\",\n  \"meta_title\": \"Services | Laravel AI\",\n  \"meta_description\": \"Services description\",\n  \"meta_keywords\": \"services, laravel, nextjs\",\n  \"meta_fields\": {\n    \"template\": \"services\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:4000/api/pages-admin",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "4000",
+          "path": ["api", "pages-admin"]
+        }
+      }
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
