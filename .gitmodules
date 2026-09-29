@@ -7,3 +7,6 @@
 [submodule "react-nextjs"]
     path = react-nextjs
     url = file:///D:/laragon/www/laravel-ai/react-nextjs
+[submodule "python-api"]
+	path = python-api
+	url = https://github.com/iamfritz/python-api.git
