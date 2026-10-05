@@ -1,12 +1,6 @@
-[submodule "laravel-api"]
-    path = laravel-api
-    url = file:///D:/laragon/www/laravel-ai/laravel-api
-[submodule "node-api"]
-    path = node-api
-    url = file:///D:/laragon/www/laravel-ai/node-api
-[submodule "react-nextjs"]
-    path = react-nextjs
-    url = file:///D:/laragon/www/laravel-ai/react-nextjs
-[submodule "python-api"]
-	path = python-api
-	url = https://github.com/iamfritz/python-api.git
+﻿[submodule "python-fastapi-api"]
+    path = python-fastapi-api
+    url = https://github.com/iamfritz/python-fastapi.git
+[submodule "react-fastapi"]
+    path = react-fastapi
+    url = https://github.com/iamfritz/react-fastapi.git
