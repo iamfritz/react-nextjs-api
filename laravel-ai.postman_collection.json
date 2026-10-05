@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "Laravel AI API",
-    "description": "Postman collection for the Laravel-compatible public and admin API endpoints.",
+    "name": "Laravel AI FastAPI PostgreSQL API",
+    "description": "Postman collection for the Laravel-compatible FastAPI service running on port 8000.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -11,10 +11,10 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/health",
+          "raw": "http://127.0.0.1:8000/api/health",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "health"]
         }
       }
@@ -25,10 +25,10 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/site",
+          "raw": "http://127.0.0.1:8000/api/site",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "site"]
         }
       }
@@ -39,10 +39,10 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/pages",
+          "raw": "http://127.0.0.1:8000/api/pages",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "pages"]
         }
       }
@@ -53,10 +53,10 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/pages/home",
+          "raw": "http://127.0.0.1:8000/api/pages/home",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "pages", "home"]
         }
       }
@@ -67,31 +67,26 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/blog?page=1",
+          "raw": "http://127.0.0.1:8000/api/blog?page=1",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "blog"],
-          "query": [
-            {
-              "key": "page",
-              "value": "1"
-            }
-          ]
+          "query": [{ "key": "page", "value": "1" }]
         }
       }
     },
     {
-      "name": "Blog Post By Slug",
+      "name": "Blog Detail",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/blog/why-laravel-is-great-for-apis",
+          "raw": "http://127.0.0.1:8000/api/blog/fastapi-postgresql-guide",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
-          "path": ["api", "blog", "why-laravel-is-great-for-apis"]
+          "port": "8000",
+          "path": ["api", "blog", "fastapi-postgresql-guide"]
         }
       }
     },
@@ -101,10 +96,10 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/categories",
+          "raw": "http://127.0.0.1:8000/api/categories",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "categories"]
         }
       }
@@ -115,17 +110,70 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/categories/laravel/blog?page=1",
+          "raw": "http://127.0.0.1:8000/api/categories/electronics/blog?page=1",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
-          "path": ["api", "categories", "laravel", "blog"],
-          "query": [
-            {
-              "key": "page",
-              "value": "1"
-            }
-          ]
+          "port": "8000",
+          "path": ["api", "categories", "electronics", "blog"],
+          "query": [{ "key": "page", "value": "1" }]
+        }
+      }
+    },
+    {
+      "name": "Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/products?page=1",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "products"],
+          "query": [{ "key": "page", "value": "1" }]
+        }
+      }
+    },
+    {
+      "name": "Product Detail",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/products/wireless-noise-cancelling-headphones",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "products", "wireless-noise-cancelling-headphones"]
+        }
+      }
+    },
+    {
+      "name": "Products by Category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/products/category/electronics?page=1",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "products", "category", "electronics"],
+          "query": [{ "key": "page", "value": "1" }]
+        }
+      }
+    },
+    {
+      "name": "Product Tags",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/product-tags",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "product-tags"]
         }
       }
     },
@@ -133,21 +181,16 @@
       "name": "Register User",
       "request": {
         "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Admin User\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"secret123\",\n  \"password_confirmation\": \"secret123\",\n  \"role\": \"admin\"\n}"
+          "raw": "{\n  \"name\": \"FastAPI Tester\",\n  \"email\": \"fastapi.tester@example.com\",\n  \"password\": \"secret123\",\n  \"role\": \"admin\"\n}"
         },
         "url": {
-          "raw": "http://127.0.0.1:4000/api/register",
+          "raw": "http://127.0.0.1:8000/api/register",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "register"]
         }
       }
@@ -156,21 +199,16 @@
       "name": "Login User",
       "request": {
         "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"secret123\"\n}"
+          "raw": "{\n  \"email\": \"fastapi.tester@example.com\",\n  \"password\": \"secret123\"\n}"
         },
         "url": {
-          "raw": "http://127.0.0.1:4000/api/login",
+          "raw": "http://127.0.0.1:8000/api/login",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "login"]
         }
       }
@@ -187,16 +225,16 @@
           }
         ],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/user",
+          "raw": "http://127.0.0.1:8000/api/user",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "user"]
         }
       }
     },
     {
-      "name": "List Posts (Admin/Editor)",
+      "name": "Products Admin List",
       "request": {
         "method": "GET",
         "header": [
@@ -207,16 +245,16 @@
           }
         ],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/posts",
+          "raw": "http://127.0.0.1:8000/api/products-admin",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
-          "path": ["api", "posts"]
+          "port": "8000",
+          "path": ["api", "products-admin"]
         }
       }
     },
     {
-      "name": "Create Post (Admin/Editor)",
+      "name": "Create Product",
       "request": {
         "method": "POST",
         "header": [
@@ -225,26 +263,23 @@
             "value": "Bearer {{token}}",
             "type": "text"
           },
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
+          { "key": "Content-Type", "value": "application/json" }
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"title\": \"New API article\",\n  \"slug\": \"new-api-article\",\n  \"excerpt\": \"Short summary of the article.\",\n  \"content\": \"This is a full article body.\",\n  \"photo\": \"https://images.unsplash.com/photo-1522202176988-66273c2fd55f\",\n  \"status\": \"published\"\n}"
+          "raw": "{\n  \"title\": \"Demo Product\",\n  \"slug\": \"demo-product\",\n  \"description\": \"Example inventory item\",\n  \"image\": \"https://images.unsplash.com/photo-1516321318423-f06f85e504b3\",\n  \"sku\": \"DEMO-001\",\n  \"price\": 99.99,\n  \"category_id\": 1,\n  \"tags\": [\"demo\", \"featured\"],\n  \"status\": \"published\"\n}"
         },
         "url": {
-          "raw": "http://127.0.0.1:4000/api/posts",
+          "raw": "http://127.0.0.1:8000/api/products-admin",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
-          "path": ["api", "posts"]
+          "port": "8000",
+          "path": ["api", "products-admin"]
         }
       }
     },
     {
-      "name": "List Pages Admin",
+      "name": "Posts Admin List",
       "request": {
         "method": "GET",
         "header": [
@@ -255,16 +290,61 @@
           }
         ],
         "url": {
-          "raw": "http://127.0.0.1:4000/api/pages-admin",
+          "raw": "http://127.0.0.1:8000/api/posts",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
+          "path": ["api", "posts"]
+        }
+      }
+    },
+    {
+      "name": "Create Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"PostgreSQL FastAPI\",\n  \"slug\": \"postgresql-fastapi\",\n  \"excerpt\": \"A quick note about the new backend\",\n  \"content\": \"Full article body goes here.\",\n  \"photo\": \"https://images.unsplash.com/photo-1516321318423-f06f85e504b3\",\n  \"status\": \"published\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/posts",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "posts"]
+        }
+      }
+    },
+    {
+      "name": "Pages Admin List",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/pages-admin",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
           "path": ["api", "pages-admin"]
         }
       }
     },
     {
-      "name": "Create Page Admin",
+      "name": "Create Page",
       "request": {
         "method": "POST",
         "header": [
@@ -273,20 +353,17 @@
             "value": "Bearer {{token}}",
             "type": "text"
           },
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
+          { "key": "Content-Type", "value": "application/json" }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"title\": \"Services\",\n  \"slug\": \"services\",\n  \"content\": \"<p>Content for services page.</p>\",\n  \"photo\": \"https://images.unsplash.com/photo-1516321318423-f06f85e504b3\",\n  \"status\": \"published\",\n  \"meta_title\": \"Services | Laravel AI\",\n  \"meta_description\": \"Services description\",\n  \"meta_keywords\": \"services, laravel, nextjs\",\n  \"meta_fields\": {\n    \"template\": \"services\"\n  }\n}"
         },
         "url": {
-          "raw": "http://127.0.0.1:4000/api/pages-admin",
+          "raw": "http://127.0.0.1:8000/api/pages-admin",
           "protocol": "http",
           "host": ["127.0.0.1"],
-          "port": "4000",
+          "port": "8000",
           "path": ["api", "pages-admin"]
         }
       }
@@ -295,23 +372,9 @@
   "event": [
     {
       "listen": "prerequest",
-      "script": {
-        "type": "text/javascript",
-        "exec": [""]
-      }
+      "script": { "type": "text/javascript", "exec": [""] }
     },
-    {
-      "listen": "test",
-      "script": {
-        "type": "text/javascript",
-        "exec": [""]
-      }
-    }
+    { "listen": "test", "script": { "type": "text/javascript", "exec": [""] } }
   ],
-  "variable": [
-    {
-      "key": "token",
-      "value": ""
-    }
-  ]
+  "variable": [{ "key": "token", "value": "" }]
 }
